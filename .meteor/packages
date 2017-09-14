@@ -39,3 +39,4 @@ tmeasday:publish-counts
 angularutils:pagination
 huaming:js-xlsx
 shell-server@0.2.1
+mrt:nprogress

@@ -1,5 +1,5 @@
 
-angular.module('sisPredios').directive('valida', validador);
+angular.module('parroquias').directive('valida', validador);
 function validador () {
   return {
     restrict: 'A',
@@ -22,7 +22,7 @@ function validador () {
 }
 
 
-angular.module('sisPredios').directive('validaForm', validaForm);
+angular.module('parroquias').directive('validaForm', validaForm);
 	function validaForm () {
   return {
     restrict: 'A',

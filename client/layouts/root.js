@@ -1,4 +1,4 @@
-angular.module("sisPredios")
+angular.module("parroquias")
 .controller("RootCtrl", RootCtrl);  
  function RootCtrl($scope, $meteor, $reactive, $state, $stateParams, toastr){
  	let rc = $reactive(this).attach($scope); 
@@ -13,4 +13,15 @@ angular.module("sisPredios")
 	    
 	  });
 	 }
+	 
+	 
+	 //Funcion Evalua la sessión del usuario
+	this.autorun(function() {
+    if(!Meteor.user()){	    
+    	$state.go('anon.login');
+    }    
+  });	
+
+	 
+	 
 };

@@ -1,4 +1,4 @@
-angular.module("sisPredios").run(function ($rootScope, $state, toastr) {
+angular.module("parroquias").run(function ($rootScope, $state, toastr) {
   $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
     switch(error) {
       case "AUTH_REQUIRED":
@@ -17,7 +17,7 @@ angular.module("sisPredios").run(function ($rootScope, $state, toastr) {
   });
 });
 
-angular.module('sisPredios').config(['$injector', function ($injector) {
+angular.module('parroquias').config(['$injector', function ($injector) {
   var $stateProvider = $injector.get('$stateProvider');
   var $urlRouterProvider = $injector.get('$urlRouterProvider');
   var $locationProvider = $injector.get('$locationProvider');
@@ -77,7 +77,7 @@ angular.module('sisPredios').config(['$injector', function ($injector) {
       templateUrl: 'client/home/home.ng.html',      
       controller: 'HomeCtrl as ho',
       ncyBreadcrumb: {
-		    label: "Hola"
+		    label: "Home"
 		  },
       resolve: {
 	      "currentUser": ["$meteor", function($meteor){
@@ -85,50 +85,40 @@ angular.module('sisPredios').config(['$injector', function ($injector) {
 	      }]
 	    },
     })
-    .state('root.importarContratantes', {
-      url: '/importarContratantes',
-      templateUrl: 'client/contratantes/importarContratantes.ng.html',
-      controller: 'ImportarContratantesCtrl as icon',
+    .state('root.diocesis', {
+      url: '/diocesis',
+      templateUrl: 'client/diocesis/diocesis.html',
+      controller: 'DiocesisCtrl as dio',
       resolve: {
 	      "currentUser": ["$meteor", function($meteor){
 	        return $meteor.requireUser();
 	      }]
 	    }
     })
-    .state('root.importarMovimientos', {
-      url: '/importarMovimientos',
-      templateUrl: 'client/movimientos/importarMovimientos.ng.html',
-      controller: 'ImportarMovimientosCtrl as imov',
+    .state('root.zonasPastorales', {
+      url: '/zonasPastorales',
+      templateUrl: 'client/zonasPastorales/zonasPastorales.html',
+      controller: 'ZonasPastoralesCtrl as zp',
       resolve: {
 	      "currentUser": ["$meteor", function($meteor){
 	        return $meteor.requireUser();
 	      }]
 	    }
     })
-    .state('root.estadocuenta', {
-      url: '/estadoCuenta',
-      templateUrl: 'client/contratantes/estadocuenta.ng.html',
-      controller: 'estadoCuentaCtrl as ecta',
+    .state('root.decanatos', {
+      url: '/decanatos',
+      templateUrl: 'client/decanatos/decanatos.html',
+      controller: 'DecanatosCtrl as dec',
       resolve: {
 	      "currentUser": ["$meteor", function($meteor){
 	        return $meteor.requireUser();
 	      }]
 	    }
     })
-    .state('root.cambioContrasena', {
-      url: '/cambioContrasena/:id',
-      templateUrl: 'client/contratantes/cambioContrasena.ng.html',
-      controller: 'cambioContrasenaCtrl as pwd',
-      resolve: {
-	      "currentUser": ["$meteor", function($meteor){
-	        return $meteor.requireUser();
-	      }]
-	    }
-    }) 
-    .state('root.listarContratantes', {
-      url: '/listarContratantes',
-      templateUrl: 'client/contratantes/listarContratantes.ng.html',
-      controller: 'listarContratantesCtrl as con',
+    .state('root.parroquias', {
+      url: '/parroquias',
+      templateUrl: 'client/parroquias/parroquias.html',
+      controller: 'ParroquiasCtrl as par',
       resolve: {
 	      "currentUser": ["$meteor", function($meteor){
 	        return $meteor.requireUser();

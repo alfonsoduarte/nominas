@@ -6,8 +6,15 @@
   "dependencies": {
     "babel-runtime": "^6.22.0",
     "bcrypt": "^1.0.2",
+    "better-unoconv": "^1.0.3",
+    "docxtemplater": "^3.0.11",
+    "fibers": "^2.0.0",
+    "format-currency": "^1.0.0",
     "jquery": "^3.1.1",
-    "moment": "^2.17.1"
+    "jszip": "^2.6.1",
+    "moment": "^2.17.1",
+    "node-cmd": "^2.0.0",
+    "unoconv2": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alfonsoduarte/sisPredio.git"
+    "url": "https://github.com/alfonsoduarte/cleanProyect.git"
   },
   "author": "",
   "license": "ISC",
